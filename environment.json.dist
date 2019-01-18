@@ -1,0 +1,12 @@
+{
+  "credentials" : {
+    "sysadmin" : {
+      "username" : "",
+      "password" : ""
+    },
+    "standardUser" : {
+      "username" : "",
+      "password" : ""
+    }
+  }
+}
