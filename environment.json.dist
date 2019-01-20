@@ -8,5 +8,9 @@
       "username" : "",
       "password" : ""
     }
-  }
+  },
+  "url": "https://login.salesforce.com",
+    "timeout": {
+      "explicit" : 30000
+    }
 }
