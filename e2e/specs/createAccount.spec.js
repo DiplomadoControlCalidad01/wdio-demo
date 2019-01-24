@@ -1,11 +1,14 @@
+const expect = require('chai').expect;
+
 const {credentials} = require('../../environment');
 
 const Login = require('../pages/login.po');
 const AccountForm = require('../pages/accountFormModal.po');
+const AccountView = require('../pages/accountView.po');
 
-describe('Login to salesforce', () => {
+describe('Account Feature', () => {
 
-    it('Login', () => {
+    it('Create an Account', () => {
         let header = Login.loginAs(credentials.sysadmin.username,
             credentials.sysadmin.password);
         let appLauncherModal = header.clickAppLauncherButton();
@@ -15,12 +18,18 @@ describe('Login to salesforce', () => {
         let accountForm = new AccountForm();
         let account = {
             'Name': 'MyAccountName',
-            'Phone': '5465465465',
-            'Fax': '5465465465',
+            'Phone': '(546) 5465465',
+            'Fax': '(546) 5465465',
         };
         accountForm.fillForm(account);
         accountForm.clickSaveButton();
-        browser.pause(30000);
+
+        let accountView = new AccountView();
+
+        expect(accountView.getNameText()).to.equal(account.Name);
+        expect(accountView.getPhoneText()).to.equal(account.Phone);
+
+        accountView.clickDetailsTab();
 
     });
 });

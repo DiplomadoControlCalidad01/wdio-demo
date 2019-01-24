@@ -15,6 +15,11 @@ class CommonActions {
     static waitForVisible(locator) {
         browser.waitForVisible(locator, explicit);
     }
+
+    static getText(locator) {
+        browser.waitForVisible(locator, explicit);
+        return browser.getText(locator);
+    }
 }
 
 module.exports = CommonActions;

@@ -6,6 +6,8 @@ class Header {
 
     constructor() {
         this.appLaucherButton = '.salesforceIdentityAppLauncherHeader';
+        commonActions.waitForVisible('.slds-global-header');
+        commonActions.waitForVisible('.branding-userProfile-button');
     }
 
     clickAppLauncherButton()  {
