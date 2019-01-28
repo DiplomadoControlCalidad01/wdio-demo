@@ -1,5 +1,5 @@
-let defaultConfig = require('./wdio.conf.js').config;
-
+// Let's load the default configs:
+const defaultConfig = require('./wdio.conf').config;
 const {browserstack} = require('./environment');
 
 defaultConfig.user = browserstack.user;

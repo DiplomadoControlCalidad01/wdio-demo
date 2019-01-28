@@ -1,24 +1,29 @@
 {
-  "credentials" : {
-    "sysadmin" : {
-      "username" : "",
-      "password" : ""
+  "credentials": {
+    "sysadmin": {
+      "username": "",
+      "password": ""
     },
-    "standardUser" : {
-      "username" : "",
-      "password" : ""
+    "standardUser": {
+      "username": "",
+      "password": ""
     }
   },
   "url": "https://login.salesforce.com",
-    "timeout": {
-      "explicit" : 30000
-    },
-    "browserstack": {
-        "user": "",
-        "key": "",
-        "os": "Windows",
-        "os_version": "10",
-        "browser": "Edge",
-        "browser_version": "18.0"
-      }
+  "timeout": {
+    "explicit": 30000
+  },
+  "browser": "chrome",
+  "docker": {
+    "host": "127.0.0.1",
+    "port": "4444"
+  },
+  "browserstack": {
+    "user": "",
+    "key": "",
+    "os": "Windows",
+    "os_version": "10",
+    "browser": "Chrome",
+    "browser_version": "71.0"
+  }
 }
