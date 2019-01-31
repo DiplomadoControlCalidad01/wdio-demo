@@ -10,6 +10,7 @@ class Form {
 
     clickSaveButton() {
         commonActions.click(this.saveButton);
+        commonActions.waitForInVisible('.modal-container.slds-modal__container');
     }
 
 }

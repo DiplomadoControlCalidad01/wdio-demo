@@ -16,6 +16,10 @@ class CommonActions {
         browser.waitForVisible(locator, explicit);
     }
 
+    static waitForInVisible(locator) {
+        browser.waitForVisible(locator, explicit, true);
+    }
+
     static getText(locator) {
         browser.waitForVisible(locator, explicit);
         return browser.getText(locator);

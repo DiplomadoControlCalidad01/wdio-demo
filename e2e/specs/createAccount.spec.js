@@ -8,24 +8,28 @@ const AccountView = require('../pages/accountView.po');
 
 describe('Account Feature', () => {
 
-    it('Create an Account', () => {
-        let header = Login.loginAs(credentials.sysadmin.username,
+    let header;
+
+    beforeEach(() => {
+        header = Login.loginAs(credentials.sysadmin.username,
             credentials.sysadmin.password);
+    });
+
+    it('#BVT Create an Account', () => {
         let appLauncherModal = header.clickAppLauncherButton();
         let content = appLauncherModal.openItem('Account');
-        content.clickNewButton();
 
+        content.clickNewButton();
         let accountForm = new AccountForm();
         let account = {
             'Name': 'MyAccountName',
             'Phone': '(546) 5465465',
-            'Fax': '(546) 5465465',
+            'Fax': '(546) 5465465'
         };
         accountForm.fillForm(account);
         accountForm.clickSaveButton();
 
         let accountView = new AccountView();
-
         expect(accountView.getNameText()).to.equal(account.Name);
         expect(accountView.getPhoneText()).to.equal(account.Phone);
 
